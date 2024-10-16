@@ -1,28 +1,29 @@
 import styles from "./Hero.module.css";
+import HeroImg from "../../assets/images/morsa.jpg"
+
 const Hero = () => {
   return (
     <section id="home" className={styles.hero} aria-labelledby="hero-title">
       <div className={styles.heroContent}>
         <h1 id="hero-title" className={styles.heroTitle}>
-          Arquitectura Moderna,{" "}
-          <span className={styles.highlight}>Renders de Calidad</span>
+          Modern Architecture,{" "}
+          <span className={styles.highlight}>High-Quality Renders</span>
         </h1>
         <p className={styles.heroDescription}>
-          Llevamos tus ideas a la realidad con representaciones arquitectónicas
-          de alta precisión y realismo.
+          We bring your ideas to life with highly precise and realistic architectural visualizations.
         </p>
         <a
-          href="#contacto"
+          href="#contact"
           className={styles.heroButton}
-          title="Ir a la sección de contacto"
+          title="Go to the contact section"
         >
-          Contáctanos
+          Contact Us
         </a>
       </div>
       <div className={styles.heroImageWrapper}>
         <img
-          src="https://via.placeholder.com/800x500"
-          alt="Render arquitectónico moderno"
+          src={HeroImg}
+          alt="Modern architectural render"
           className={styles.heroImage}
         />
       </div>

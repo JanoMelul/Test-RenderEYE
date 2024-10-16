@@ -1,54 +1,56 @@
 import { useState, useEffect } from 'react';
 import styles from './Projects.module.css';
+import HeroImg from "../../assets/images/morsa.jpg"
+
 
 const projectsData = [
   {
     id: 1,
-    title: "Proyecto Residencial",
-    description: "Un proyecto moderno de viviendas sostenibles con vistas panorámicas.",
-    imageUrl: "https://via.placeholder.com/800x500",
-    altText: "Vista del proyecto residencial moderno"
+    title: "Residential Project",
+    description: "A modern sustainable housing project with panoramic views.",
+    imageUrl: HeroImg,
+    altText: "View of modern residential project"
   },
   {
     id: 2,
-    title: "Edificio Corporativo",
-    description: "Diseño minimalista y funcional para un edificio corporativo innovador.",
-    imageUrl: "https://via.placeholder.com/800x500",
-    altText: "Diseño del edificio corporativo minimalista"
+    title: "Corporate Building",
+    description: "Minimalist and functional design for an innovative corporate building.",
+    imageUrl: HeroImg,
+    altText: "Minimalist corporate building design"
   },
   {
     id: 3,
-    title: "Centro Comercial",
-    description: "Un centro comercial espacioso y moderno con énfasis en la experiencia del usuario.",
-    imageUrl: "https://via.placeholder.com/800x500",
-    altText: "Interior del centro comercial moderno"
+    title: "Shopping Center",
+    description: "A spacious and modern shopping center focused on user experience.",
+    imageUrl: HeroImg,
+    altText: "Interior of modern shopping center"
   },
   {
     id: 4,
-    title: "Hotel Boutique",
-    description: "Elegante diseño de un hotel boutique que combina lujo y confort.",
-    imageUrl: "https://via.placeholder.com/800x500",
-    altText: "Vista exterior del hotel boutique"
+    title: "Boutique Hotel",
+    description: "Elegant design of a boutique hotel combining luxury and comfort.",
+    imageUrl: HeroImg,
+    altText: "Exterior view of boutique hotel"
   },
   {
     id: 5,
-    title: "Centro Cultural",
-    description: "Innovador centro cultural que promueve la comunidad y el arte.",
-    imageUrl: "https://via.placeholder.com/800x500",
-    altText: "Diseño innovador del centro cultural"
+    title: "Cultural Center",
+    description: "Innovative cultural center promoting community and the arts.",
+    imageUrl: HeroImg,
+    altText: "Innovative cultural center design"
   },
   {
     id: 6,
-    title: "Museo de Arte",
-    description: "Un museo innovador con espacios interactivos y diseño vanguardista.",
-    imageUrl: "https://via.placeholder.com/800x500",
-    altText: "Museo de arte con diseño moderno"
+    title: "Art Museum",
+    description: "An innovative museum with interactive spaces and avant-garde design.",
+    imageUrl: HeroImg,
+    altText: "Modern art museum design"
   }
 ];
 
 const Projects = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  const [animationClass, setAnimationClass] = useState(''); // Clase de animación activa
+  const [animationClass, setAnimationClass] = useState(''); 
 
   const projectsPerPage = () => {
     if (window.innerWidth >= 1024) {
@@ -61,11 +63,11 @@ const Projects = () => {
   };
 
   const handleNext = () => {
-    setAnimationClass(styles.exitToLeft); // Animación de salida hacia la izquierda
+    setAnimationClass(styles.exitToLeft); 
     setTimeout(() => {
       setCurrentSlide((prevSlide) => (prevSlide + projectsPerPage()) % projectsData.length);
-      setAnimationClass(styles.enterFromRight); // Animación de entrada desde la derecha
-    }, 700); // Tiempo de la animación antes de cambiar de slide
+      setAnimationClass(styles.enterFromRight); 
+    }, 700); 
   };
 
   const handlePrev = () => {
@@ -85,7 +87,7 @@ const Projects = () => {
 
   return (
     <section id="projects" className={styles.projectsSection} aria-labelledby="projects-title">
-      <h2 id="projects-title" className={styles.projectsTitle}>Nuestros Proyectos</h2>
+      <h2 id="projects-title" className={styles.projectsTitle}>Our Projects</h2>
 
       <div className={styles.slider}>
         <button className={styles.sliderButton} onClick={handlePrev}>‹</button>

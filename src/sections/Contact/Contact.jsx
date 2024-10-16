@@ -20,7 +20,7 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Formulario enviado correctamente");
+    alert("Form submitted successfully");
   };
 
   return (
@@ -30,10 +30,9 @@ const Contact = () => {
       transition={{ duration: 0.8 }}
       className={styles.contactSection}
     >
-      <h2 className={styles.contactTitle}>Contáctanos</h2>
+      <h2 className={styles.contactTitle}>Contact Us</h2>
       <p className={styles.contactSubtitle}>
-        Estamos aquí para ayudarte. Completa el siguiente formulario y nos
-        pondremos en contacto contigo.
+        {"We're here to help. Fill out the form below and we'll get in touch with you."}
       </p>
 
       <form className={styles.contactForm} onSubmit={handleSubmit}>
@@ -42,10 +41,11 @@ const Contact = () => {
           <input
             type="text"
             name="name"
-            placeholder="Tu nombre"
+            placeholder="Your Name"
             value={formData.name}
             onChange={handleChange}
             required
+            aria-label="Your Name"
           />
         </div>
 
@@ -54,10 +54,11 @@ const Contact = () => {
           <input
             type="email"
             name="email"
-            placeholder="Tu correo electrónico"
+            placeholder="Your Email"
             value={formData.email}
             onChange={handleChange}
             required
+            aria-label="Your Email"
           />
         </div>
 
@@ -66,19 +67,21 @@ const Contact = () => {
           <input
             type="tel"
             name="phone"
-            placeholder="Tu teléfono (opcional)"
+            placeholder="Your Phone (optional)"
             value={formData.phone}
             onChange={handleChange}
+            aria-label="Your Phone"
           />
         </div>
 
         <div className={styles.inputGroup}>
           <textarea
             name="message"
-            placeholder="Escribe tu mensaje"
+            placeholder="Write your message"
             value={formData.message}
             onChange={handleChange}
             required
+            aria-label="Your Message"
           />
         </div>
 
@@ -87,8 +90,9 @@ const Contact = () => {
           className={styles.submitButton}
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          aria-label="Send message"
         >
-          Enviar <FaPaperPlane className={styles.sendIcon} />
+          Send <FaPaperPlane className={styles.sendIcon} />
         </motion.button>
       </form>
     </motion.section>

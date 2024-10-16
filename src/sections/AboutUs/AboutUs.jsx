@@ -2,45 +2,43 @@ import styles from "./AboutUs.module.css";
 
 const AboutUs = () => {
   return (
-    <section id="about" className={styles.aboutUsSection}>
-      <h2 className={styles.aboutUsTitle}>Quiénes Somos</h2>
+    <section id="about" className={styles.aboutUsSection} aria-labelledby="about-us-title">
+      <h2 id="about-us-title" className={styles.aboutUsTitle}>About Us</h2>
       <div className={styles.cardsContainer}>
-        {/* Tarjeta 1 */}
+        {/* Card 1 */}
         <div className={styles.card}>
           <div className={styles.cardImageWrapper}>
             <img
               src="https://randomuser.me/api/portraits/men/32.jpg"
-              alt="Juan Pérez"
+              alt="Juan Pérez, Lead Architect"
               className={styles.cardImage}
+              loading="lazy"
             />
           </div>
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>Juan Pérez</h3>
-            <h4 className={styles.cardRole}>Arquitecto Principal</h4>
+            <h4 className={styles.cardRole}>Lead Architect</h4>
             <p className={styles.cardDescription}>
-              Juan es el arquitecto principal, con más de 10 años de experiencia
-              en el diseño y desarrollo de proyectos innovadores. Su visión
-              lleva cada idea a la realidad.
+              Juan is the lead architect with over 10 years of experience in designing and developing innovative projects. His vision brings every idea to life.
             </p>
           </div>
         </div>
 
-        {/* Tarjeta 2 */}
+        {/* Card 2 */}
         <div className={styles.card}>
           <div className={styles.cardImageWrapper}>
             <img
               src="https://randomuser.me/api/portraits/women/44.jpg"
-              alt="Ana García"
+              alt="Ana García, 3D Render Specialist"
               className={styles.cardImage}
+              loading="lazy"
             />
           </div>
           <div className={styles.cardContent}>
             <h3 className={styles.cardTitle}>Ana García</h3>
-            <h4 className={styles.cardRole}>Especialista en Renders 3D</h4>
+            <h4 className={styles.cardRole}>3D Render Specialist</h4>
             <p className={styles.cardDescription}>
-              Ana es la especialista en renders 3D, enfocada en crear
-              representaciones realistas y detalladas de cada proyecto. Su
-              pasión por el detalle eleva cada creación.
+              Ana is the 3D render specialist, focused on creating realistic and detailed visualizations of every project. Her passion for detail elevates each creation.
             </p>
           </div>
         </div>
