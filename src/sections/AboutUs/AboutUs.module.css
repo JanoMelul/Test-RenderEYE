@@ -1,0 +1,164 @@
+/* Sección general */
+.aboutUsSection {
+  padding: 80px 50px;
+  background-color: #181B20;
+  color: #F6F7FB;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
+  text-align: center;
+  flex-direction: column; /* Para que el título esté encima de las tarjetas */
+}
+
+.aboutUsTitle {
+  font-size: 2.5rem;
+  color: #BAAC62;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.aboutUsTitle::after {
+  content: "";
+  width: 50px;
+  height: 4px;
+  background-color: #BAAC62;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Contenedor de las tarjetas */
+.cardsContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap; /* Permite que las tarjetas se ajusten en pantallas pequeñas */
+}
+
+/* Estilos para las tarjetas (cards) */
+.card {
+  background-color: #1f2328;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border 0.4s ease;
+  padding: 40px 20px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+  border: 2px solid #BAAC62;
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 20px;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage {
+  transform: scale(1.1);
+}
+
+.cardTitle {
+  font-size: 1.6rem;
+  color: #BAAC62;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.cardRole {
+  font-size: 1.2rem;
+  color: #F6F7FB;
+  margin-bottom: 15px;
+}
+
+.cardDescription {
+  font-size: 1rem;
+  color: #F6F7FB;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding: 0 10px;
+  text-align: center;
+  transition: color 0.4s ease;
+}
+
+.card:hover .cardDescription {
+  color: #d1d2d6;
+}
+
+/* Efecto sutil para diferenciarlo */
+.card::before {
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background: rgba(255, 255, 255, 0.05);
+  top: -10px;
+  left: -10px;
+  transform: rotate(3deg);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* Responsive para pantallas pequeñas */
+@media (max-width: 1024px) {
+  .cardsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutUsTitle {
+    font-size: 2rem;
+  }
+
+  .cardsContainer {
+    flex-direction: column;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .cardTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardRole {
+    font-size: 1.1rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+}

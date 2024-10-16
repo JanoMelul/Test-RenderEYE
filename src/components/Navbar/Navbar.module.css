@@ -1,0 +1,127 @@
+/* Estilos básicos */
+.navbar {
+  width: 100%;
+  background-color: #181B20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoImage {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logo a {
+  color: #BAAC62;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.navMenu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  transition: max-height 0.3s ease-in-out;
+}
+
+.navItem {
+  margin-left: 20px;
+}
+
+.navLink {
+  color: #F6F7FB;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background-color: #BAAC62;
+  bottom: -6px;
+  left: 0;
+  transition: width 0.3s ease-in-out;
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%;
+}
+
+.navLink:hover {
+  color: #BAAC62;
+}
+
+/* Icono de hamburguesa */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #F6F7FB;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Estilo responsive */
+@media screen and (max-width: 768px) {
+  .navMenu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #181B20;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  .navMenu.active {
+    max-height: 300px;
+  }
+
+  .navItem {
+    margin: 15px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo a {
+    font-size: 1.5rem;
+  }
+
+  .navLink {
+    font-size: 1.2rem;
+  }
+}
