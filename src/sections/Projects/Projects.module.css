@@ -1,10 +1,17 @@
+:root {
+  --background-color: #181b20;
+  --highlight-color: #baac62;
+  --contrast-color: #f6f7fb;
+}
+
 .projectsSection {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #181b20;
-  color: #f6f7fb;
+  align-items: center;
+  background-color: var(--background-color);
+  color: var(--contrast-color);
   text-align: center;
   padding: 20px;
   box-sizing: border-box;
@@ -12,44 +19,13 @@
 
 .projectsTitle {
   font-size: 2.5rem;
-  color: #baac62;
+  color: var(--highlight-color);
   margin-bottom: 20px;
 }
 
-.slider {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80%;
-  width: 100%;
-  overflow: hidden;
-}
-
-.sliderButton {
-  background-color: #baac62;
-  border: none;
-  padding: 10px 25px;
-  font-size: 20px;
-  color: #181b20;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 8px;
-  z-index: 10;
-}
-
-.sliderButton:hover {
-  background-color: #181b20;
-  color: #baac62;
-  border: 2px solid #baac62;
-}
-
-.sliderContentWrapper {
-  flex: 1;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.sliderOuter {
+  width: 80%;
+  overflow: hidden; /* Se ocultan las cards que salen de los límites */
 }
 
 .sliderContent {
@@ -58,21 +34,77 @@
   width: 100%;
 }
 
+/* Botones con indicadores en el medio */
+.sliderButtonWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.sliderButton {
+  background-color: var(--highlight-color);
+  border: none;
+  padding: 10px;
+  font-size: 24px;
+  color: var(--background-color);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+  height: 50px; /* Tamaño más pequeño */
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; /* Asegura que el botón esté por encima de otros elementos */
+  position: relative;
+}
+
+.sliderButton:hover {
+  background-color: var(--background-color);
+  color: var(--highlight-color);
+  transform: scale(1.1);
+}
+
+/* Indicadores */
+.indicatorWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  margin: 0 5px;
+  background-color: var(--highlight-color);
+  cursor: pointer;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
 .projectCard {
-  flex: 0 0 calc(95% / 3);
-  max-width: calc(95% / 3);
+  flex: 0 0 calc(100% / 3);
+  max-width: calc(100% / 3);
   text-align: left;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
   background-color: #1f2328;
   padding: 20px;
-  margin: 0 10px;
-  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .projectCard:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  border-color: var(--highlight-color);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
 }
 
 .projectImage {
@@ -82,13 +114,13 @@
 }
 
 .projectInfo {
-  color: #f6f7fb;
+  color: var(--contrast-color);
 }
 
 .projectTitle {
   font-size: 1.8rem;
   margin-bottom: 10px;
-  color: #baac62;
+  color: var(--highlight-color);
 }
 
 .projectDescription {
@@ -96,85 +128,17 @@
   line-height: 1.5;
 }
 
-/* Animaciones de entrada y salida */
-.enterFromRight {
-  animation: slideInRight 0.70s forwards;
-}
-
-.enterFromLeft {
-  animation: slideInLeft 0.70s forwards;
-}
-
-.exitToLeft {
-  animation: slideOutLeft 0.70s forwards;
-}
-
-.exitToRight {
-  animation: slideOutRight 0.70s forwards;
-}
-
-@keyframes slideInRight {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInLeft {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideOutLeft {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes slideOutRight {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
-/* Ajuste responsive */
+/* Responsive */
 @media (max-width: 1024px) {
   .projectCard {
-    flex: 0 0 calc(100% / 2);
+    flex: 0 0 calc(100% / 2); /* Show 2 projects on medium screens */
     max-width: calc(100% / 2);
   }
 }
 
 @media (max-width: 768px) {
   .projectCard {
-    flex: 0 0 100%;
+    flex: 0 0 100%; /* Show 1 project on small screens */
     max-width: 100%;
-  }
-
-  .sliderButton {
-    font-size: 18px;
-    padding: 10px 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .projectsTitle {
-    font-size: 2rem;
-  }
-
-  .sliderButton {
-    font-size: 16px;
-    padding: 8px 15px;
   }
 }

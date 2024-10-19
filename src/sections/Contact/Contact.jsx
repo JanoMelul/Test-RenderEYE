@@ -29,8 +29,9 @@ const Contact = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       className={styles.contactSection}
+      id="contact"
     >
-      <h2 className={styles.contactTitle}>Contact Us</h2>
+      <h2 className="app__section_title">Contact Us</h2>
       <p className={styles.contactSubtitle}>
         {"We're here to help. Fill out the form below and we'll get in touch with you."}
       </p>

@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -12,7 +12,9 @@ const Footer = () => {
             className={styles.logoImage}
             loading="lazy"
           />
-          <h1 className={styles.companyName}>RenderEYE - 3D Rendering Services</h1> 
+          <h1 className={styles.companyName}>
+            RenderEYE - 3D Rendering Services
+          </h1>
         </div>
 
         <nav aria-label="Main links" className={styles.footerSections}>
@@ -58,22 +60,13 @@ const Footer = () => {
             <h2 className={styles.footerTitle}>Follow Us</h2>
             <div className={styles.socialIcons}>
               <a
-                href="https://www.instagram.com/yourcompany"
+                href="https://www.instagram.com/rendereye3d/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Instagram of Company Name"
+                aria-label="Instagram of RenderEYE3D"
                 className={styles.socialLink}
               >
                 <FaInstagram />
-              </a>
-              <a
-                href="https://www.facebook.com/yourcompany"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook of Company Name"
-                className={styles.socialLink}
-              >
-                <FaFacebookF />
               </a>
             </div>
           </div>
@@ -82,7 +75,7 @@ const Footer = () => {
 
       <div className={styles.footerBottom}>
         <p>
-          &copy; {new Date().getFullYear()} All rights reserved - Company Name.
+          &copy; {new Date().getFullYear()} All rights reserved - RenderEye3D.
         </p>
         <p>
           Developed by{" "}

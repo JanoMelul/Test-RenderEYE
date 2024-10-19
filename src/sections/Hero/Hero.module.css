@@ -3,10 +3,10 @@
   align-items: center;
   justify-content: space-between;
   padding: 50px;
-  background-color: #181B20; /* Fondo oscuro */
   height: 100vh;
   position: relative;
   overflow: hidden;
+  background-color: transparent;
 }
 
 .heroContent {
@@ -18,24 +18,24 @@
 .heroTitle {
   font-size: 3rem;
   font-weight: bold;
-  color: #F6F7FB; /* Color blanco */
+  color: #f6f7fb; /* Color blanco */
   line-height: 1.2;
 }
 
 .heroTitle span {
-  color: #BAAC62; /* Color dorado para resaltar "Renders de Calidad" */
+  color: #baac62; /* Color dorado para resaltar "Renders de Calidad" */
 }
 
 .heroDescription {
   font-size: 1.2rem;
   margin: 20px 0;
-  color: #F6F7FB; /* Color blanco */
+  color: #f6f7fb; /* Color blanco */
 }
 
 .heroButton {
   display: inline-block;
-  background-color: #BAAC62; /* Botón en dorado */
-  color: #181B20; /* Texto del botón en oscuro */
+  background-color: #baac62; /* Botón en dorado */
+  color: #181b20; /* Texto del botón en oscuro */
   padding: 12px 24px;
   font-size: 1rem;
   text-transform: uppercase;
@@ -46,8 +46,8 @@
 }
 
 .heroButton:hover {
-  background-color: #F6F7FB; /* Fondo blanco en hover */
-  color: #181B20; /* Texto oscuro en hover */
+  background-color: #f6f7fb; /* Fondo blanco en hover */
+  color: #181b20; /* Texto oscuro en hover */
 }
 
 .heroImageWrapper {

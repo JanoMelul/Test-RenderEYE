@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className={styles.navbarContainer}>
         <div className={styles.logo}>
           <img src="/logo.png" alt="Project logo" className={styles.logoImage} loading="lazy" />
-          <a href="#home" aria-label="Go to home section">My Project</a>
+          <a href="#home" aria-label="Go to home section">RenderEYE</a>
         </div>
         <ul className={`${styles.navMenu} ${isOpen ? styles.active : ''}`}>
           <li className={styles.navItem}>
@@ -64,6 +64,15 @@ const Navbar = () => {
               aria-label="About us"
             >
               About Us
+            </a>
+          </li>
+          <li className={styles.navItem}>
+            <a
+              href="#testimonials"
+              className={`${styles.navLink} ${activeSection === 'testimonials' ? styles.active : ''}`}
+              aria-label="Testimonials"
+            >
+              Testimonials
             </a>
           </li>
           <li className={styles.navItem}>

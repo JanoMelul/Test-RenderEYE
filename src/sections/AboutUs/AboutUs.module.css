@@ -11,26 +11,6 @@
   flex-direction: column; /* Para que el título esté encima de las tarjetas */
 }
 
-.aboutUsTitle {
-  font-size: 2.5rem;
-  color: #BAAC62;
-  margin-bottom: 40px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  position: relative;
-}
-
-.aboutUsTitle::after {
-  content: "";
-  width: 50px;
-  height: 4px;
-  background-color: #BAAC62;
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 /* Contenedor de las tarjetas */
 .cardsContainer {
   display: flex;

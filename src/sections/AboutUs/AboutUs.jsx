@@ -3,7 +3,7 @@ import styles from "./AboutUs.module.css";
 const AboutUs = () => {
   return (
     <section id="about" className={styles.aboutUsSection} aria-labelledby="about-us-title">
-      <h2 id="about-us-title" className={styles.aboutUsTitle}>About Us</h2>
+      <h2 id="about-us-title" className="app__section_title">About Us</h2>
       <div className={styles.cardsContainer}>
         {/* Card 1 */}
         <div className={styles.card}>
